@@ -1,0 +1,3 @@
+We prefer DaemonSet over ReplicaSet when we need to maintain one copy of pod in every node.
+For eg. 
+A monitoring pod & log maintaining pod.
