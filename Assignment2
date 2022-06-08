@@ -1,0 +1,7 @@
+Assignment 2 
+
+To update a container's image using deployment, we will not interrupt the whole system.
+We simply include new codes in continuous running app by using "Rolling Update"
+
+cmd: - kubectl describe deploy #nameOfApp
+This command helps in seeing the strategyType as ROLLING UPDATE
