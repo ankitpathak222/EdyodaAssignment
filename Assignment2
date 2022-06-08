@@ -1,7 +1,16 @@
 Assignment 2 
 
-To update a container's image using deployment, we will not interrupt the whole system.
 We simply include new codes in continuous running app by using "Rolling Update"
+Rolling updates move the pods slowly by overlapping old with new
 
-cmd: - kubectl describe deploy #nameOfApp
-This command helps in seeing the strategyType as ROLLING UPDATE
+Update in the yaml file --
+
+ minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+    
+    
+cmd: -  kubectl set image deployment <name> nodejs=luksa/kubia:v2
